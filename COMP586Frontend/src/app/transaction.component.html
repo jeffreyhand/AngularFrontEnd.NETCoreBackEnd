@@ -1,0 +1,22 @@
+<mat-card>
+        <form [formGroup] = "form" (ngSubmit) = "api.postTransaction(form.value)" >
+
+                <mat-form-field>
+                        <mat-select type = "walletTitle" formControlName="walletTitle">
+                            <mat-option *ngFor="let wallet of wallets" [value]="wallet.title">
+                            {{wallet.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="quantity" placeholder="Quantity" formControlName = "quantity">
+                </mat-form-field>
+                <mat-form-field>
+
+                    <input matInput type="price" placeholder="Price" formControlName = "price">
+                </mat-form-field>
+                <!-- disable the entire form if the controls' validation doesn't pass -->
+                <button mat-button [disabled] = "!form.valid">Save</button>
+            </form>
+</mat-card>

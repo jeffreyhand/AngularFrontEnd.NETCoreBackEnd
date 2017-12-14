@@ -1,0 +1,28 @@
+<mat-card>
+        <mat-card-content>
+            <!-- For loop through all the transactions that will do the respective bindings for each item in the list -->
+            <mat-list *ngFor="let transaction of transactions">
+                   <!-- <mat-list-item>     at {{transaction.price | currency}}</mat-list-item>  -->
+
+                   <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                        {{transaction.walletTitle}} 
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                        {{transaction.quantity * transaction.price | currency}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                        
+                            Purchased <b>{{transaction.quantity}}</b> at a price of <b>{{transaction.price | currency}}</b> on <b>{{transaction.postDate | date:'MMM d, y, h:mm:ss a'}}</b>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+            </mat-list>
+
+          </mat-card-content>
+    </mat-card>
+    
+    
+    
+    

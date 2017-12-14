@@ -1,0 +1,17 @@
+<mat-card>
+    <form [formGroup] = "form" (ngSubmit) = "api.postWallet(form.value)" >
+        <mat-form-field>
+            <!-- bind email within the values property in the form group -->
+            <input matInput type="title" placeholder="Wallet Title" formControlName = "title">
+        </mat-form-field>
+
+        <!-- disable the entire form if the controls' validation doesn't pass -->
+        <button mat-button [disabled] = "!form.valid">Create</button>
+    </form>
+
+    <mat-list *ngFor="let wallet of wallets">
+        <mat-list-item >{{wallet.title}}</mat-list-item>
+    </mat-list>
+
+</mat-card>
+

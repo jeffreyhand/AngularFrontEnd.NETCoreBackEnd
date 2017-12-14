@@ -1,0 +1,14 @@
+<mat-card>
+        <form [formGroup] = "form" (ngSubmit) = "authentication.register(form.value)" >
+                <mat-form-field>
+                    <!-- bind email within the values property in the form group -->
+                    <input matInput type="email" placeholder="Email" formControlName = "email">
+                </mat-form-field>
+                <mat-form-field>
+                    <!-- bind password within the values property in the form group -->
+                    <input matInput type="password" placeholder="Password" formControlName = "password">
+                </mat-form-field>
+                <!-- disable the entire form if the controls' validation doesn't pass -->
+                <button mat-button [disabled] = "!form.valid">Register</button>
+            </form>
+</mat-card>
