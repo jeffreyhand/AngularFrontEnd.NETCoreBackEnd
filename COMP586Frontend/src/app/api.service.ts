@@ -22,13 +22,13 @@ export class ApiService {
     // GET transaction using JSON from the back-end.
     getTransactions()
     {
-        return this.http.get('http://localhost:51119/api/transactions');
+        return this.http.get('http://comp586backend.azurewebsites.net/api/transactions');
     }
 
     // POST request transaction using JSON to the back-end.
     postTransaction(transaction)
     {
-        this.http.post('http://localhost:51119/api/transactions', transaction).subscribe(response => {
+        this.http.post('http://comp586backend.azurewebsites.net/api/transactions', transaction).subscribe(response => {
             console.log(response)
         });
         this.router.navigate(['/transactions'])
@@ -44,7 +44,7 @@ export class ApiService {
     // Update transactions
     putTransaction(transaction)
     {
-        this.http.put('http://localhost:51119/api/transactions/' + transaction.id , transaction).subscribe(response => {
+        this.http.put('http://comp586backend.azurewebsites.net/api/transactions/' + transaction.id , transaction).subscribe(response => {
             console.log(response)
         });
     }
@@ -54,7 +54,7 @@ export class ApiService {
     // GET wallets using JSON from the back-end.
     getWallets()
     {
-        return this.http.get('http://localhost:51119/api/wallets');
+        return this.http.get('http://comp586backend.azurewebsites.net/api/wallets');
     }
 
     // Gets the user-selected transaction
@@ -66,7 +66,7 @@ export class ApiService {
     // POST request wallet using JSON to the back-end.
     postWallet(wallet)
     {
-        this.http.post('http://localhost:51119/api/wallets', wallet).subscribe(response => {
+        this.http.post('http://comp586backend.azurewebsites.net/api/wallets', wallet).subscribe(response => {
             console.log(response)
         });
 

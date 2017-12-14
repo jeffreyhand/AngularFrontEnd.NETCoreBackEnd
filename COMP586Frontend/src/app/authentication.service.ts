@@ -14,7 +14,7 @@ export class AuthenticationService {
     register(credentials)
     {
         // Any type allows the response object to be converted to a string.
-        this.http.post<any>('http://localhost:51119/api/account', credentials).subscribe(response =>{
+        this.http.post<any>('http://comp586backend.azurewebsites.net/api/account', credentials).subscribe(response =>{
             localStorage.setItem('token', response)  // creates a key value pair in local storage within the broswer.
             this.router.navigate(['/wallet'])
         });
@@ -24,7 +24,7 @@ export class AuthenticationService {
     login(credentials)
     {
         // Any type allows the response object to be converted to a string.
-        this.http.post<any>('http://localhost:51119/api/account/login', credentials).subscribe(response =>{
+        this.http.post<any>('http://comp586backend.azurewebsites.net/api/account/login', credentials).subscribe(response =>{
             localStorage.setItem('token', response)  // creates a key value pair in local storage within the broswer.
             this.router.navigate(['/transaction']);
         })
