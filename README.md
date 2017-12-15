@@ -1,5 +1,3 @@
-** Update: The Azure backend server is rejecting requests due to CORS issue despite the configuration addressing it. I sent a ticket to Microsoft to resolve the issue and will update this when the site is back up **
-
 # comp586project
 
 To use this web application, go to http://comp586projectfrontend.azurewebsites.net/
